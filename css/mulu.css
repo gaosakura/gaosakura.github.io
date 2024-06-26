@@ -1,0 +1,55 @@
+.mulu{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5.8%;
+}
+.middle{
+    font-size: 0;
+    letter-spacing: -1.5em;
+}
+.ziyang{
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    font-size: 30px;
+}
+.middle-cont{
+    display: block;
+    /* vertical-align: middle; */
+    letter-spacing: 0;
+}
+.ziyang::before{
+    top: 0;
+    background-position: left;
+}
+.ziyang::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 34px;
+    height: 24px;
+    background: url(https://www.ihchina.cn/Public/static/themes/image/temp/png3.png) no-repeat;
+}
+.ziyang::after{
+    bottom: 0;
+    background-position: right;
+}
+.ziyang::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 34px;
+    height: 24px;
+    background: url(https://www.ihchina.cn/Public/static/themes/image/temp/png3.png) no-repeat;
+}
+.up{
+    position: absolute;
+    top: 110px;
+    left: 1350px;
+    z-index: 999;
+}
