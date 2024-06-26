@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国非物质文化遗产网</title>
+    <link rel="shortcut icon" href="tu/logo.ico" type="image/x-icon"/>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: linear-gradient(45deg,#4cdcd5,#ef8d2c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .shell,
+        form{
+            position: relative;
+        }
+        .shell{
+            display: flex;
+            justify-content: center;
+        }
+        form{
+            width: 562px;
+            height: 520px;
+            background-color: #fff;
+            box-shadow: 0 15px 40px #23839e;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .img-box{
+            width: 330px;
+            height: 520px;
+        }
+        .img-box img{
+            height: 520px;
+            width: 330px;
+        }
+        #form-body{
+            width: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #welcome{
+            width: 100%;
+            text-align: center;
+            line-height: 1;
+        }
+        #text1{
+            color: #bcbcbd;
+            font-size: 50px;
+        }
+        #text2{
+            color: rgb(218, 219, 219);
+            font-size: 30px;
+            margin-top: 0;
+        }
+        #input-area{
+            width: 100%;
+            margin-top: 40px;
+        }
+        .f-inp{
+            padding: 13px 25px;
+            border: 2px solid #c9c9ca;
+            line-height: 1;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        .f-inp input{
+            width: 100%;
+            font-size: 14px;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        .f-inp input::placeholder{
+            color: #bdbdbe;
+        }
+        #submit-button-cvr{
+            margin-top: 20px;
+        }
+        #submit-button{
+            display: block;
+            width: 100%;
+            color: #fff;
+            font-size: 14px;
+            margin: 0;
+            padding: 14px 14px;
+            border: 0;
+            background-color: #ef8d2c;
+            border-radius: 25px;
+            line-height: 1;
+            cursor: pointer;
+        }
+        #forgot-password{
+            text-align: center;
+            margin-top: 10px;
+        }
+        #fotgot-password a{
+            color: #dededf;
+            font-size: 12px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="shell">
+        <div class="img-box">
+            <img src="images2/a.png" alt="">
+        </div>
+        <form action="" method="post">
+            <div id="form-body">
+                <div id="welcome">
+                    <div id="text1">HELLO</div>
+                    <div id="text2">WELCOME</div>
+                </div>
+                <div id="input-area">
+                    <div class="f-inp">
+                        <input type="text" placeholder="Email Address">
+                    </div>
+                    <div class="f-inp">
+                        <input type="password" placeholder="password">
+                    </div>
+                </div>
+                <div id="submit-button-cvr">
+                    <button type="submit" id="submit-button"><a href="非.html">LOGIN</a> </button>
+                </div>
+                <div id="fotgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

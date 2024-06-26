@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <title>中国非物质文化遗产网</title>
+    <link rel="shortcut icon" href="tu/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/navright.css">
+    <link rel="stylesheet" href="css/百叶窗.css">
+    <link rel="stylesheet" href="css/page1.css">
+    <link rel="stylesheet" href="css/mulu.css">
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+        body,ul,li,a,p,div {
+            /*慎删*/
+            padding: 0px;
+            margin: 0px;
+        }
+ 
+        #wrap {
+            overflow: hidden;
+            width: 100%;
+        }
+ 
+        #main {
+            top: 0;
+            position: relative;
+        }
+ 
+        .page {
+            /*谨删*/
+            width: 100%;
+            margin: 0;
+        }
+ 
+        #pageUl {
+            position: fixed;
+            right: 10px;
+        }
+    </style>
+    <!-- 首页轮播图 -->
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+     
+        .carousel {
+            /* 设置相对定位 */
+            position: relative;
+            height: 100%;
+            width: 100%;
+            /* 隐藏溢出部分 */
+            overflow: hidden;
+        }
+     
+        .carousel img:first-child{
+            /* 设置绝对定位 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 初始设置图片透明度为1 */
+            opacity: 1;
+            /* 设置渐变过渡效果 */
+            transition: opacity 2s;
+        }
+     
+        .carousel img:not(:first-child) {
+            /* 设置绝对定位 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 初始设置图片透明度为0 */
+            opacity: 0;
+            /* 设置渐变过渡效果 */
+            transition: opacity 2s;
+        }
+  </style>
+</head>
+<body>
+    <!--
+        每个全屏页面div的class为page，其中的图片的class为pageImg
+        ul为右侧的导航栏
+        pageUlLi和page的数目必须相等，修改数目时还应修改最下面js鼠标悬停的跳转代码
+        -->
+    <div id="wrap">
+        <div id="main">
+            <!-- 第一页首页 -->
+            <div id="page1" class="page">        
+                    <!-- 导航栏 -->
+                    <div class="back">
+                        <div class="tubiao"><img src="https://www.ihchina.cn/Uploads/Picture/2018/11/20/s5bf3825b320ab.png" alt="">
+                        </div>
+                            <span class="navleft">中国非物质文化遗产网.中国非物质文化遗产数字博物馆</span>
+                            
+                            <div class="daoright">
+                                <ul>
+                                       <li></li>
+                                       <li></li>
+                                       <li></li>
+                                       <li></li>
+                                       <div class="calendar-box" edit_params="width%3D50%26height%3D26%26unlimit%3D1%26noalert%3D1%26width2%3D50%26height2%3D26%26unlimit2%3D1%26noalert2%3D1%26title1Show%3D1%26title1Max%3D10%26backgroundColor%3D1%26zoom%3D0.2%26zoom2%3D0.2%26is_home%3D1">2024-06-26&nbsp;&nbsp;
+                                      星期三&nbsp;&nbsp;农历五月廿一&nbsp;&nbsp;&nbsp;
+                                      
+                                       </div>
+                                </ul>
+                            </div>
+                            
+                         <!-- 导航开始 -->
+                         <div id="dd">
+                           <div class="bb">
+                            <ul>
+                                <li><a href="https://www.ihchina.cn/" class="one">首页</a></li>
+                                <li><a href="https://www.ihchina.cn/jigou" class="two">机构</a></li>
+                                <li><a href="https://www.ihchina.cn/zhengce" class="three">政策</a></li>
+                                <li><a href="https://www.ihchina.cn/zixun" class="four">资讯</a></li>
+                                <li><a href="https://www.ihchina.cn/project.html" class="five">清单</a></li>
+                                <li><a href="https://www.ihchina.cn/ziyuan" class="six">资源</a></li>
+                                <li><a href="https://www.ihchina.cn/xueshu" class="seven">学术</a></li>
+                                <li><a href="https://www.ihchina.cn/shenbaozhinan.html" class="eight">百科</a></li>
+                            </ul>
+                            </div>
+                         </div>
+                        <!-- 导航结束 -->
+                       </div>
+<!-- 轮播图设计开始-->
+<!-- 整体框架 -->
+<div class="carousel">
+    <!-- 轮播图片 -->
+    <img src="tu/扎染（传统技艺）.jpg">
+    <img src="tu/打铁花（民俗）.jpg">
+    <!-- <video src="vio/非遗视频.mp4"></video> -->
+    <img src="tu/油纸伞（传统技艺）.jpg">
+    <img src="tu/编织(传统技艺).jpg" alt="">
+    <img src="tu/非遗图片皮影.png" alt="">
+</div>
+<!-- 轮播图js -->
+<script>
+    let carousel = document.querySelector('.carousel');
+    let images = carousel.querySelectorAll('img');
+    let currentImgIndex = 0;
+  
+    function showNextImage() {
+        images[currentImgIndex].style.opacity = 0; // 隐藏当前图片
+        currentImgIndex = (currentImgIndex + 1) % images.length; // 计算下一张图片的索引
+        images[currentImgIndex].style.opacity = 1; // 显示下一张图片
+    }
+  
+    // 设置定时器，每5秒切换图片
+    setInterval(showNextImage, 2000);
+  </script>
+<!-- 轮播图设计结束 -->
+                   </div>
+                   <div class="muluback">
+                    <div class="mulu middle">
+                    <div class="ziyang middle-cont">
+                        <a href="目录.html" class="up"><img src="https://www.ihchina.cn/Public/static/themes/image/temp/png3.png" alt=""></a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+
+            
+
+
+
+
+
+
+
+            
+    </div>
+</body>
+<!-- 页面滚动 -->
+<script type="text/javascript">
+    //改变窗口大小时调整图片大小
+    window.onload = resizeImages;
+    window.onresize = resizeImages;
+ 
+    function resizeImages() {
+        $(function (e) {
+            var screenWeight = document.documentElement.clientWidth;
+            var screenHeight = document.documentElement.clientHeight;
+            $("[name=pageImg]").css("width", screenWeight).css("height", screenHeight);
+            $("#pageUl").css("bottom", screenHeight >> 1);
+        });
+    }
+ 
+    var index = 1;
+    var curIndex = 1;
+    var wrap = document.getElementById("wrap");
+    var main = document.getElementById("main");
+    var hei = document.body.clientHeight;
+    wrap.style.height = hei + "px";
+    var obj = document.getElementsByTagName("div");
+    for (var i = 0; i < obj.length; i++) {
+        if (obj[i].className == 'page') {
+            obj[i].style.height = hei + "px";
+        }
+    }
+    var pageNum = document.querySelectorAll(".page").length;
+    //如果不加时间控制，滚动会过度灵敏，一次翻好几屏
+    var startTime = 0, //翻屏起始时间  
+        endTime = 0,
+        now = 0;
+    //浏览器兼容      
+    if ((navigator.userAgent.toLowerCase().indexOf("firefox") != -1)) {
+        document.addEventListener("DOMMouseScroll", scrollFun, false);
+    } else if (document.addEventListener) {
+        document.addEventListener("mousewheel", scrollFun, false);
+    } else if (document.attachEvent) {
+        document.attachEvent("onmousewheel", scrollFun);
+    } else {
+        document.onmousewheel = scrollFun;
+    }
+ 
+    //滚动事件处理函数
+    function scrollFun(event) {
+        startTime = new Date().getTime();
+        var delta = event.detail || (-event.wheelDelta);
+        //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
+        //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
+        if ((endTime - startTime) < -1000) {
+            if (delta > 0 && parseInt(main.offsetTop) > -(hei * (pageNum - 1))) {
+                //向下滚动
+                index++;
+                toPage(index);
+            }
+            if (delta < 0 && parseInt(main.offsetTop) < 0) {
+                //向上滚动
+                index--;
+                toPage(index);
+            }
+            endTime = new Date().getTime();
+        } else {
+            event.preventDefault();
+        }
+    }
+ 
+  
+     function toPage(idx) {
+        //jquery实现动画效果
+        if(idx!=curIndex){
+			index=idx
+            var delta=idx - curIndex;
+            now = now - delta * hei;        
+            $("#main").animate({
+                top: (now + 'px')
+            }, 500);
+            curIndex = idx;
+            //更改列表的选中项
+            $(".pageUlLi").css("color", "black");
+            $("#pageUlLi" + idx).css("color", "red");
+			
+        }
+    }
+	document.getElementById("pageUlLi1").onclick = function () {
+	    toPage(1);
+	}
+	document.getElementById("pageUlLi2").onclick = function () {
+	    toPage(2);
+	}
+	document.getElementById("pageUlLi3").onclick = function () {
+	    toPage(3);
+	}
+	document.getElementById("pageUlLi4").onclick = function () {
+	    toPage(4);
+	}
+	document.getElementById("pageUlLi5").onclick = function () {
+	    toPage(5);
+	}
+</script>
+</html>
